@@ -3,25 +3,25 @@ import pickle
 import matplotlib.pyplot as plt
 
 class Point:
-    def __init__(self, x: float, y: float):
+    def __init__(self, x: float, y: float) -> None:
         self.x = x
         self.y = y
 
 class Circle:
-    def __init__(self, center: Point(x, y), radius: float):
+    def __init__(self, center: Point(x, y), radius: float) -> None:
         self.center = center
         self.radius = radius
 
     def area(self) -> float:
         return math.pi * (self.radius**2)
     
-    def draw(self):
+    def draw(self) -> None:
         circle = plt.Circle((self.center.x, self.center.y), self.radius, color="r")
         plt.gca().add_patch(circle)
         plt.axis("scaled")
         plt.show()
 
-    def __str__(self):
+    def __str__(self) -> None:
         return "Circle with center at ", (self.center.x, self.center.y), " and radius ", (self.radius.r)
 
 class Triangle:
@@ -35,14 +35,14 @@ class Triangle:
         areat = (sp * (sp-point_1) * (sp * point_2)*(sp - point_3))
         return area
 
-    def draw(self):
+    def draw(self) -> None:
         x = [self.point_1.x, self.point_2.x, self.point_3.x, self.point_1.x]
         y = [self.point_1.y, self.point_2.y, self.point_3.y, self.point_1.y]
         plt.fill(x, y, color='b')
         plt.axis("scaled")
         plt.show()
 
-    def __str__(self):
+    def __str__(self) -> None:
         return "Triangle with vertices at ", (self.point_1.x, self.point_1.y1), (self.point_2.x, self.point_2.y), " and ", (self.point_3.x, self.point_3.y)
 
 class Rectangle:
@@ -53,14 +53,14 @@ class Rectangle:
     def area(self) -> float:
         return point_1 * point_2
 
-    def draw(self):
+    def draw(self) -> None:
         x = [self.point_1.x, self.point_2.x, self.point_2.x, self.point_1.x, self.point_1.x]
         y = [self.point_1.y, self.point_1.y, self.point_2.y, self.point_2.y, self.point_1.y]
         plt.fill(x, y, color='g')
         plt.axis("scaled")
         plt.show()
 
-    def __str__(self):
+    def __str__(self) -> None:
         return "Rectangle with vertices at ", (self.point_1.x, self.point_1.y), " and ", (self.point_2.x, self.point_2.y)
 
 class Painter:
